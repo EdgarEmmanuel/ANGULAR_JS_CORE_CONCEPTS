@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="" ng-app="app3" ng-cloak>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <title>ANGULARJS - TUTORIAL</title>
+        <style>
+            [ng\:cloak],[ng-cloak], .ng-cloak {
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller="controller_app3">
+            There is <b data-ng-bind="countries.length"></b> to display
+            <ol>
+                <li>{{countries[0].name}}</li>
+            </ol>
+            <ol start="2">
+                <li ng-repeat="country in countries" ng-if="$index!==0">
+                    <span >
+                        {{country.name}}
+                    </span>
+                </li>
+            </ol>
+            <hr/>
+            <div>
+                <h1>Put Html code from the controller </h1>
+                <div ng-include="getList()"></div>
+                <label>
+                    {{ showList ? "show" : "hide" }} {{getList()}}
+                    <input type="checkbox" ng-model="showList"/>
+                </label>
+            </div>
+            <hr/>
+            <h1>NgSwitch statement</h1>
+            <div>
+                <label>
+                    <input type="number" ng-model="number" placeholder="type a number" />
+                </label>
+                <br/>
+                <div ng-switch="number">
+                    <h6 ng-switch-when="1">You type {{number}}</h6>
+                    <h6 ng-switch-when="2">You type {{number}}</h6>
+                    <h6 ng-switch-when="3">You type {{number}}</h6>
+                    <h6 ng-switch-default="1">Default  Number</h6>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+                crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js"></script>
+        <script type="text/javascript" src="tutorial3.js"></script>
+    </body>
+</html>

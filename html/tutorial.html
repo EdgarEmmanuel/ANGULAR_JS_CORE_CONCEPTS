@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="" ng-app="app1" ng-init="person = {name:'emmanuel'} ">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <title>ANGULARJS - TUTORIAL</title>
+    </head>
+    <body>
+
+        <div ng-controller="controller_app1">
+            <form>
+                <label>
+                    <input type="number" placeholder="value 1" ng-model="first_number" required  class="form-control"/>
+                </label><br/>
+                <label>
+                    <input type="number" placeholder="value 2" ng-model="last_number" required class="form-control"/>
+                </label><br/>
+                <button ng-click="makeTheSumOfTheNumbers()" class="btn btn-primary">SUM</button>
+                <span>Result : {{sumResult}}</span>
+            </form>
+            <hr/>
+            <!-- binding  -->
+            <h1>Binding<h4>( try to change the value of the first input type number )</h4></h1>
+            <p> direct binding : {{first_number}}</p>
+            <p> dynamic binding with data-ng-bind : <span data-ng-bind="first_number"></span></p>
+            <hr/>
+            <!-- loop through some data -->
+            <h1>Loop through some data</h1>
+            <ul>
+                <li ng-repeat="country in countries">{{country.name}}</li>
+            </ul>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../js/tutorial.js"></script>
+    </body>
+</html>
